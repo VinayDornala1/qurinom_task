@@ -4,6 +4,7 @@ import 'package:task/barcode_details/barcode_details_cubit.dart';
 import 'package:task/borcode/barcode_cubit.dart';
 import 'package:task/login/login_cubit.dart';
 import 'package:task/login_screen.dart';
+import 'package:task/repositary/api.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,9 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => LoginCubit()),
-        BlocProvider(create: (_) => BarcodeCubit()),
-        BlocProvider(create: (_)=>BarcodeDetailsCubit())
+        BlocProvider(create: (_) => LoginCubit(apiService: ApiService())),
+        BlocProvider(create: (_) => BarcodeCubit(apiService: ApiService())),
+        BlocProvider(create: (_) => BarcodeDetailsCubit())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

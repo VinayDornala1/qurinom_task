@@ -37,6 +37,9 @@ class _BarcodeScreenState extends State<BarcodeScreen> {
                         productName: state.productName,
                         brand: state.brand,
                         quantity: state.quantity)));
+            print('navigationnnn');
+          }else{
+
           }
           // TODO: implement listener
         },
